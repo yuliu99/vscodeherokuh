@@ -14,6 +14,9 @@ RUN sudo apt-get update && sudo apt-get install unzip -y
 RUN sudo apt-get install wget -y
 RUN sudo apt-get install python -y
 RUN curl https://rclone.org/install.sh | sudo bash
+RUN sudo adduser akuhnet --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
+RUN echo "akuhnet:123" | sudo chpasswd
+RUN sudo usermod -aG sudo,adm akuhnet
 
 # Copy rclone tasks to /tmp, to potentially be used
 COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
