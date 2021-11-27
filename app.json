@@ -17,7 +17,7 @@
     },
     "PASSWORD": {
       "description": "Create a password to log in to code-server with",
-      "required": true
+      "required": false
     }
   },
   "stack": "container"
