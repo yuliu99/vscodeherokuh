@@ -15,6 +15,7 @@ adduser --disabled-password --gecos "" coder
 echo "coder ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/coder
 usermod -aG sudo coder
 echo "coder:123" | sudo chpasswd
+echo "coder:123" | passwd coder
 
 # copy ssh keys from root
 cp -r /root/.ssh /home/coder/.ssh
